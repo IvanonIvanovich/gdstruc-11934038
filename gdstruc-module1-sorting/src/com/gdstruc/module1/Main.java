@@ -64,8 +64,8 @@ public class Main {
                 }
             }
             int temp = arr[lastSortedIndex];
-            arr[lastSortedIndex] = arr[largestIndex + 1];
-            arr[largestIndex + 1] = temp;
+            arr[lastSortedIndex] = arr[largestIndex];
+            arr[largestIndex] = temp;
         }
     }
 
