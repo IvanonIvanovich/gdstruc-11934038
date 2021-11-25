@@ -1,39 +1,34 @@
 package com.gdstrucmodule2;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 public class Main {
 
     public static void main(String[] args) {
 
-        List<Player> playerList = new ArrayList<>();
+        //player list
+        Player esuna = new Player(1, "Esuna", 100);
+        Player konpa = new Player(2, "Konpa", 69);
+        Player sakmeoff = new Player(3, "Sakmeoff", 22);
+        Player schmitler = new Player(4, "Schmitler", 420);
 
-        playerList.add(new Player(1, "Esuna", 100));
-        playerList.add(new Player(2, "Konpa", 69));
-        playerList.add(new Player(3, "Yee", 24));
+        PlayerLinkedList playerLinkedList = new PlayerLinkedList();
 
-        //access an Element
-        //System.out.println(playerList.get(1));
+        playerLinkedList.addToFront(schmitler);
+        playerLinkedList.addToFront(sakmeoff);
+        playerLinkedList.addToFront(konpa);
+        playerLinkedList.addToFront(esuna);
 
-        playerList.add(2, new Player(420, "Schmitler", 420));
+        //removing the first element
+        playerLinkedList.removeFirstElement();
+        playerLinkedList.printList();
 
-        playerList.remove(2);
+        System.out.print("\n----------------------------------------------------------------------\n");
 
-        //System.out.println(playerList.contains(new Player(2, "Konpa", 69)));
+        System.out.println("Linked list has the player named Konpa: " + playerLinkedList.contains(konpa));
+        System.out.println("Location of Konpa within the linked list: " + playerLinkedList.indexOf(konpa));
+        System.out.println("Linked list has the player named Sakmeoff: " + playerLinkedList.contains(sakmeoff));
+        System.out.println("Location of Sakmeoff within the linked list: " + playerLinkedList.indexOf(sakmeoff));
+        System.out.println("the current size of the Linked List= " + playerLinkedList.getSize());
 
-        //System.out.println(playerList.indexOf(new Player(2, "Konpa", 69)));
 
-        System.out.println("LinkedList:" + playerList);
-
-        System.out.println("The size of the linked list is: "
-                + playerList.size());
-
-//       for (Player p : playerList)
-//     {
-//       System.out.println(p);
-// }
     }
 }
